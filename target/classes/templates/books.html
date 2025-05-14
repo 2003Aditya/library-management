@@ -156,9 +156,14 @@
                     </span>
                 </span>
             </td>
+                        <!--<td th:text="${book.issuedTo != null ? book.issuedTo.username : 'Not issued'}">Issued Info</td>-->
+
         </tr>
         </tbody>
     </table>
+            <div th:if="${success}" style="color: green; margin-bottom: 10px;">
+                <p th:text="${success}"></p>
+            </div>
 </div>
 </body>
 </html>

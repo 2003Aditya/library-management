@@ -51,6 +51,12 @@ public class BookController {
         throw new IllegalStateException("❌ Book issue called via GET instead of POST");
     }
 
+    @GetMapping("/confirmation")
+    public String showConfirmationPage() {
+        return "confirmation";
+    }
+
+
     @PostMapping("/issue/{id}")
     @PreAuthorize("hasRole('USER')")
     public String issueBook(@PathVariable Long id, Principal principal) {
@@ -60,7 +66,7 @@ public class BookController {
         if (book != null && book.getIssuedTo() == null) {
             bookService.issueBookToUser(book, principal.getName());
         }
-        return "redirect:/books";
+        return "redirect:/books/confirmation";
     }
 }
 
