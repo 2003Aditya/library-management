@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <title>Books List</title>
+</head>
+<body style="font-family: Arial, sans-serif; background-color: #f9f9f9;">
+    <div style="width: 80%; margin: 20px auto;">
+        <h1 style="text-align: center;">Books</h1>
+
+        <div style="text-align: right; margin-bottom: 10px;">
+            <a th:href="@{/books/new}" style="padding: 8px 12px; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 4px;"
+               sec:authorize="hasAuthority('ADMIN')">Add New Book</a>
+        </div>
+
+        <table style="width: 100%; border-collapse: collapse;">
+            <thead>
+                <tr style="background-color: #ddd;">
+                    <th style="padding: 8px; border: 1px solid #ccc;">ID</th>
+                    <th style="padding: 8px; border: 1px solid #ccc;">Title</th>
+                    <th style="padding: 8px; border: 1px solid #ccc;">Author</th>
+                    <th style="padding: 8px; border: 1px solid #ccc;">ISBN</th>
+                    <th style="padding: 8px; border: 1px solid #ccc;" sec:authorize="hasAuthority('ADMIN')">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="book : ${books}">
+                    <td style="padding: 8px; border: 1px solid #ccc;" th:text="${book.id}"></td>
+                    <td style="padding: 8px; border: 1px solid #ccc;" th:text="${book.title}"></td>
+                    <td style="padding: 8px; border: 1px solid #ccc;" th:text="${book.author}"></td>
+                    <td style="padding: 8px; border: 1px solid #ccc;" th:text="${book.isbn}"></td>
+                    <td style="padding: 8px; border: 1px solid #ccc;" sec:authorize="hasAuthority('ADMIN')">
+                        <a th:href="@{'/books/edit/' + ${book.id}}" style="margin-right: 10px;">Edit</a>
+                        <a th:href="@{'/books/delete/' + ${book.id}}" onclick="return confirm('Delete this book?')">Delete</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
+

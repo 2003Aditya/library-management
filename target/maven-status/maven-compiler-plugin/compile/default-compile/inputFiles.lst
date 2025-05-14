@@ -1,0 +1,10 @@
+/home/aditya/faaltu/wuhuuh/src/main/java/com/example/demo/model/Book.java
+/home/aditya/faaltu/wuhuuh/src/main/java/com/example/demo/controller/AuthController.java
+/home/aditya/faaltu/wuhuuh/src/main/java/com/example/demo/repository/UserRepository.java
+/home/aditya/faaltu/wuhuuh/src/main/java/com/example/demo/service/BookService.java
+/home/aditya/faaltu/wuhuuh/src/main/java/com/example/demo/config/SecurityConfig.java
+/home/aditya/faaltu/wuhuuh/src/main/java/com/example/demo/repository/BookRepository.java
+/home/aditya/faaltu/wuhuuh/src/main/java/com/example/demo/service/UserService.java
+/home/aditya/faaltu/wuhuuh/src/main/java/com/example/demo/controller/BookController.java
+/home/aditya/faaltu/wuhuuh/src/main/java/com/example/demo/Application.java
+/home/aditya/faaltu/wuhuuh/src/main/java/com/example/demo/model/User.java
